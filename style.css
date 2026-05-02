@@ -143,16 +143,57 @@ nav ul.menu a {
   transition: background 0.25s ease;
 }
 
-nav ul.menu a:hover,
-nav ul.menu a.active {
+nav ul.menu a:hover {
   background: var(--color-link);
   color: var(--color-header-text);
   text-decoration: none;
 }
 
 /* ==============================
+   Tab nav for inner pages
+   ============================== */
+
+body.inner nav {
+  padding-bottom: 0;
+}
+
+body.inner nav ul.menu {
+  align-items: flex-end;
+  gap: 0;
+}
+
+body.inner nav ul.menu a {
+  border-radius: 8px 8px 0 0;
+  margin: 0 2px;
+  padding-bottom: 10px;
+}
+
+body.inner nav ul.menu a:not(.active) {
+  margin-bottom: 6px;
+}
+
+body.inner nav ul.menu a:not(.active):hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body.inner nav ul.menu a.active,
+body.inner nav ul.menu a.active:hover {
+  font-size: clamp(0.825em, 1.9vw, 1.01em);
+  background: var(--color-bg);
+  color: var(--color-heading);
+  padding: 10px 28px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ==============================
    Homepage Hero
    ============================== */
+
+body.home nav ul.menu a.active {
+  background: var(--color-link);
+  color: var(--color-header-text);
+}
 
 body.home #masthead {
   background-image: url('images/nell-scovell-1800.jpg');
@@ -619,7 +660,7 @@ body.inner main p + p {
    ============================== */
 
 .otw-intro {
-  text-align: center;
+  overflow: hidden;
   margin-bottom: 1.5rem;
 }
 
@@ -630,18 +671,6 @@ body.inner main p + p {
   object-fit: cover;
   float: left;
   margin-right: 1rem;
-}
-
-.otw-intro h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(22px, 3vw, 27px);
-  font-weight: 400;
-  color: var(--color-heading);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-top: 0;
-  margin-bottom: 20px;
-  line-height: 100px;
 }
 
 /* ==============================
@@ -823,6 +852,31 @@ body.inner main p + p {
     flex-direction: column;
     gap: 4px;
     padding-top: 10px;
+    align-items: stretch;
+  }
+
+  body.inner nav {
+    padding-bottom: 15px;
+  }
+
+  body.inner nav ul.menu a {
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  body.inner nav ul.menu a:not(.active) {
+    margin-bottom: 0;
+  }
+
+  body.inner nav ul.menu a.active,
+  body.inner nav ul.menu a.active:hover {
+    font-size: 0.85em;
+    background: var(--color-link);
+    color: var(--color-header-text);
+    padding: 6px 14px;
+    text-transform: none;
+    letter-spacing: 0;
+    border-radius: 20px;
   }
 
   body.home #masthead {
