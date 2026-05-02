@@ -28,7 +28,7 @@
 
 body {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 21px;
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.5;
@@ -233,6 +233,64 @@ article.post .entry-meta-aside .posted-on time {
 
 
 /* ==============================
+   Pagination
+   ============================== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 20px 0;
+  margin-top: 10px;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 6px;
+}
+
+.page-numbers a,
+.page-numbers .page-current {
+  display: inline-block;
+  min-width: 28px;
+  padding: 4px 8px;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.9em;
+  border-radius: 20px;
+}
+
+.page-numbers .page-current {
+  background: var(--color-link);
+  color: var(--color-header-text);
+}
+
+.page-numbers a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.page-numbers a:hover {
+  background: var(--color-link);
+  color: var(--color-header-text);
+  text-decoration: none;
+}
+
+.page-prev,
+.page-next {
+  font-family: var(--font-heading);
+  font-size: 0.85em;
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.page-prev:hover,
+.page-next:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
    Sidebar
    ============================== */
 
@@ -275,6 +333,7 @@ article.post .entry-meta-aside .posted-on time {
 
 #secondary .widget p {
   font-size: 0.9em;
+  margin-bottom: 1em;
 }
 
 /* ==============================
@@ -287,7 +346,7 @@ footer#colophon {
   margin-top: 40px;
   padding: 20px 15px 60px;
   text-align: center;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 footer#colophon a {
@@ -346,7 +405,7 @@ body.inner main {
 
 body.inner main h2:first-child {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 27px;
   font-weight: 400;
   color: var(--color-heading);
   text-transform: uppercase;
@@ -382,6 +441,25 @@ body.inner main p + p {
 }
 
 .hero-text {
+  flex: 1;
+}
+
+/* ==============================
+   Page-specific: About
+   ============================== */
+
+.about-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-photo {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.about-text {
   flex: 1;
 }
 
@@ -451,6 +529,35 @@ body.inner main p + p {
 .book-date {
   font-size: 0.9em;
   color: var(--color-accent);
+}
+
+/* ==============================
+   Page-specific: On The Web
+   ============================== */
+
+.otw-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin-right: 1rem;
+}
+
+.otw-intro h2 {
+  font-family: var(--font-heading);
+  font-size: 27px;
+  font-weight: 400;
+  color: var(--color-heading);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 100px;
 }
 
 /* ==============================
@@ -640,6 +747,15 @@ body.inner main p + p {
     flex-direction: column;
     gap: 4px;
     padding-top: 10px;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-photo {
+    width: 200px;
   }
 
   .hero {
