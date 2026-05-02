@@ -91,7 +91,7 @@ img {
 
 .site-description {
   margin: 0 0 30px;
-  color: var(--color-accent);
+  color: #b0aeb5;
   font-size: 1.2em;
   font-family: var(--font-body);
   font-weight: 300;
@@ -312,6 +312,42 @@ footer#colophon a:hover {
    Inner pages (non-home)
    ============================== */
 
+/* ==============================
+   Single post page
+   ============================== */
+
+.single-post .entry-header time {
+  font-size: 0.85em;
+  color: var(--color-accent);
+}
+
+.single-post .entry-title {
+  margin-top: 8px;
+}
+
+.single-post .entry-content {
+  margin-top: 20px;
+}
+
+.single-post .entry-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.single-post .entry-content figure {
+  margin: 0 0 15px;
+}
+
+.single-post .entry-footer {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ==============================
+   Inner pages
+   ============================== */
+
 body.inner #masthead {
   background-image: none;
 }
@@ -410,14 +446,14 @@ body.inner main p + p {
    ============================== */
 
 .book-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
 .book-entry {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: flex-start;
 }
 
@@ -468,6 +504,8 @@ body.inner main p + p {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .praise-list blockquote {
@@ -637,6 +675,10 @@ body.inner main p + p {
 
   .book-cover-large {
     width: 160px;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr;
   }
 
   .book-entry {
